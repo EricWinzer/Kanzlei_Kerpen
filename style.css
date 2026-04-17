@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "Sukhumvit Set";
+  src: url(./assets/fonts/sukhumvit/69fc4f0f2a8869feeec71379c2cf824c.woff2)
+    format("woff2");
+}
+
+:root {
+  --font-family: "Sukhumvit Set", sans-serif;
+
+  --fw-n: 300;
+  --fw-m: 600;
+  --fw-b: 800;
+
+  --spacer: 1rem;
+  --spacer-md: calc(var(--spacer) * 2);
+  --spacer-lg: calc(var(--spacer) * 3);
+
+  --color-navbar: rgb(140, 150, 160);
+  --color-navbar-hover: rgba(140, 150, 160, 0.5);
+  --color-font: rgb(140, 150, 160);
+
+  --color-rain: #1d5e86;
+  --color-rain-logo: #728da2;
+  --color-schmidt: #005228;
+  --color-schmidt-logo: #98aa93;
+  --color-aries: #7a161e;
+  --color-aries-logo: #c3958d;
+
+  --color-background: white;
+  --color-card: var(--color-font);
+
+  --btn-primary: hsl(213, 79%, 56%);
+  --btn-light: hsl(181, 95%, 92%);
+
+  --shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+  --br: 1rem;
+  --padding-responsive: calc(50% - 720px);
+  --media-width-xs: 575px;
+  --media-width-sm: 767px;
+  --media-width-m: 991px;
+  --media-width-l: 1199px;
+  --media-width-xl: 1399px;
+  --media-width-xxl: 1400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  text-wrap: balance;
+  padding: var(--spacer) max(var(--padding-responsive), var(--spacer-lg));
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-family);
+  color: var(--color-font);
+  background: var(--color-background);
+  display: grid;
+}
