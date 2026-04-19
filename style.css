@@ -55,6 +55,7 @@
 }
 
 body {
+  --row-count: auto 1fr min-content;
   text-wrap: balance;
   padding: var(--spacer) max(var(--padding-responsive), var(--spacer-lg));
 }
@@ -66,4 +67,13 @@ body {
   color: var(--color-font);
   background: var(--color-background);
   display: grid;
+  grid-template-rows: var(--row-count);
+  padding: var(--spacer);
+  gap: 1% 1%;
+}
+
+header,
+main,
+footer {
+  padding: var(--spacer), var(--padding-responsive);
 }

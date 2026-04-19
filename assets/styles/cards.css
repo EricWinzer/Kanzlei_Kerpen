@@ -1,0 +1,93 @@
+/* Card-Design */
+.container {
+  --column-count: 3;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  grid-column-gap: var(--spacer-md);
+  place-content: center;
+}
+
+.card-grid {
+  --column-count: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  grid-column-gap: var(--spacer-md);
+  padding: var(--spacer);
+}
+
+.card-grid[data-columns="2"] {
+  --column-count: 2;
+}
+
+.card-grid[data-columns="3"] {
+  --column-count: 3;
+}
+
+.card-grid[data-columns="4"] {
+  --column-count: 4;
+}
+
+.card {
+  border-radius: var(--br);
+  overflow: hidden;
+
+  @media (width > 480px) {
+    box-shadow: var(--shadow);
+  }
+}
+
+.card[data-client="1"] {
+  --color-card: var(--color-rain-logo);
+}
+
+.card[data-client="2"] {
+  --color-card: var(--color-schmidt-logo);
+}
+
+.card[data-client="3"] {
+  --color-card: var(--color-aries-logo);
+}
+
+.card-title {
+  background: var(--color-card);
+  color: rgba(255, 255, 255, 0.7);
+  padding: var(--spacer) 0;
+  font-weight: var(--fw-m);
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-subtitle {
+  color: var(--color-card);
+  padding: var(--spacer) var(--spacer-md) var(--spacer) var(--spacer-md);
+  font-size: 2rem;
+  font-weight: var(--fw-b);
+}
+
+.card-subtitle span {
+  font-size: 1rem;
+  font-weight: var(--fw-n);
+}
+
+.card-body {
+  padding: 0 var(--spacer);
+}
+
+@media (width > 480px) {
+  .pricing__grid {
+    --columns-count: 2;
+  }
+}
+
+@media (width > 720px) {
+  .pricing__grid {
+    --columns-count: 3;
+  }
+}
+
+@media (width > 960px) {
+  .pricing__grid {
+    --columns-count: 4;
+  }
+}
