@@ -1,79 +1,143 @@
-@font-face {
-  font-family: "Sukhumvit Set";
-  src: url(./assets/fonts/sukhumvit/69fc4f0f2a8869feeec71379c2cf824c.woff2)
-    format("woff2");
+:root {
+    --color-rain: #1d5e86;
+    --color-rain-logo: #728da2;
+    --color-schmidt: #005228;
+    --color-schmidt-logo: #98aa93;
+    --color-aries: #7a161e;
+    --color-aries-logo: #c3958d;
+
+    --color-background: white;
+    --color-font: rgb(140, 150, 160);
+    --color-card: var(--color-font);
+
+    --shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+    --br: 1rem;
 }
 
-:root {
-  --font-family: "Sukhumvit Set", sans-serif;
-
-  --fw-n: 300;
-  --fw-m: 600;
-  --fw-b: 800;
-
-  --spacer: 1rem;
-  --spacer-md: calc(var(--spacer) * 2);
-  --spacer-lg: calc(var(--spacer) * 3);
-
-  --color-navbar: rgb(140, 150, 160);
-  --color-navbar-hover: rgba(140, 150, 160, 0.5);
-  --color-font: rgb(140, 150, 160);
-
-  --color-rain: #1d5e86;
-  --color-rain-logo: #728da2;
-  --color-schmidt: #005228;
-  --color-schmidt-logo: #98aa93;
-  --color-aries: #7a161e;
-  --color-aries-logo: #c3958d;
-
-  --color-background: white;
-  --color-card: var(--color-font);
-
-  --btn-primary: hsl(213, 79%, 56%);
-  --btn-light: hsl(181, 95%, 92%);
-
-  --shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-  --br: 1rem;
-  --padding-responsive: calc(50% - 720px);
-  --media-width-xs: 575px;
-  --media-width-sm: 767px;
-  --media-width-m: 991px;
-  --media-width-l: 1199px;
-  --media-width-xl: 1399px;
-  --media-width-xxl: 1400px;
+@font-face {
+    font-family: 'Sukhumvit Set';
+    src: url(./assets/fonts/sukhumvit/69fc4f0f2a8869feeec71379c2cf824c.woff2) format('woff2');
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.d_none {
+    display: none;
 }
 
 body {
-  --row-count: auto 1fr min-content;
-  text-wrap: balance;
-  padding: var(--spacer) max(var(--padding-responsive), var(--spacer-lg));
+    display: grid;
+    text-wrap: balance;
+    place-items: center;
 }
 
-body {
-  min-height: 100vh;
-  min-height: 100dvh;
-  font-family: var(--font-family);
-  color: var(--color-font);
-  background: var(--color-background);
-  display: grid;
-  grid-template-rows: var(--row-count);
-  padding: var(--spacer);
-  gap: 1% 1%;
+.banner {
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
-header,
-main,
-footer {
-  padding: var(--spacer), var(--padding-responsive);
+.banner .slider {
+    position: absolute;
+    width: 25%;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(2000px) rotateX(-16deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(2000px) rotateX(-16deg) rotateY(-360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner .slider .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1440px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .content h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16rem;
+    line-height: 1rem;
+    position: relative;
+    color: blanchedalmond;
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+}
+
+.banner .content .author {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: right;
+    max-width: 200px;
+}
+
+.banner .content h2 {
+    font-size: 3rem;
+}
+
+.banner .content .model {
+    background-image: url(asdfs);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 0;
+}
+
+img {
+    position: absolute;
+    bottom: -200px;
+    left: 25%;
+    height: 100vh;
+    object-fit: cover;
 }
