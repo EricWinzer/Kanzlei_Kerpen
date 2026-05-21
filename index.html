@@ -12,10 +12,24 @@
 </head>
 
 <body>
-  <div class="banner">
-    <div class="slider" style="--quantity: 7">
+  <nav>
+    <object data="./assets/img/aries.svg" type="image/svg+xml">
+      <!-- Fallback -->
+      <img src="assets/img/aries.png" alt="ARIES Büroservice">
+    </object>
+    <object data="./assets/img/effertz.svg" type="image/svg+xml">
+      <!-- Fallback -->
+      <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
+    </object>
+    <object data="./assets/img/schmidt.svg" type="image/svg+xml">
+      <!-- Fallback -->
+      <img src="assets/img/schmidt.png" alt="HR-Beratung Schmidt">
+    </object>
+  </nav>
+  <main class="banner">
+    <div class="slider" style="--quantity: 10">
       <div class="item" style="--position: 1">
-        <section class="card-wrapper" data-client="1">
+        <section class="card-wrapper ani" data-client="1" onclick="schalte()">
           <object data="./assets/img/effertz.svg" type="image/svg+xml">
             <!-- Fallback -->
             <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
@@ -93,7 +107,8 @@
             <p>Begleitung von Mandanten bei <strong>Betriebsprüfungen</strong>
             </p>
 
-            <p>Erstellung von <strong>Jahresabschlüssen</strong> einschließlich der Fertigung von Steuererklärungen</p>
+            <p>Erstellung von <strong>Jahresabschlüssen</strong> einschließlich der Fertigung von Steuererklärungen
+            </p>
           </div>
         </section>
       </div>
@@ -122,21 +137,72 @@
           </div>
         </section>
       </div>
-      <div class="item" style="--position: 7">
+      <div class="item" style="--position: 7" onclick="">
         <section class="card-wrapper" data-client="1">
           <iframe
             src="https://www.openstreetmap.org/export/embed.html?bbox=6.6916099190711975%2C50.86925328705863%2C6.694423556327821%2C50.87061929297135&amp;layer=mapnik"
             style="border: 0"></iframe>
         </section>
       </div>
+      <div class="item" style="--position: 8">
+        <section class="card-wrapper" data-client="1">
+          <object data="./assets/img/effertz.svg" type="image/svg+xml">
+            <!-- Fallback -->
+            <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
+          </object>
+          <h2 class="card-title">Impressum</h2>
+          <div class="card-body">
+            <p><strong>Lorem </strong>ipsum dolor sit amet, consectetur adipisicing elit. Consequatur est
+              accusantium in adipisci, corporis, nihil, impedit dolores fugit modi dolorem distinctio maiores
+              perferendis. Mollitia, nisi itaque. Alias hic aperiam pariatur.</p>
+
+          </div>
+        </section>
+      </div>
+      <div class="item" style="--position: 9">
+        <section class="card-wrapper" data-client="1">
+          <object data="./assets/img/effertz.svg" type="image/svg+xml">
+            <!-- Fallback -->
+            <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
+          </object>
+          <h2 class="card-title">DSGVO</h2>
+          <div class="card-body">
+            <p><strong>Datenschutz </strong>ipsum dolor sit amet, consectetur adipisicing elit. Consequatur est
+              accusantium in adipisci, corporis, nihil, impedit dolores fugit modi dolorem distinctio maiores
+              perferendis. Mollitia, nisi itaque. Alias hic aperiam pariatur.</p>
+
+          </div>
+        </section>
+      </div>
+      <div class="item" style="--position: 10">
+        <section class="card-wrapper" data-client="1">
+          <object data="./assets/img/effertz.svg" type="image/svg+xml">
+            <!-- Fallback -->
+            <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
+          </object>
+          <h2 class="card-title">Kontakt</h2>
+          <div class="card-body">
+            <p><strong>Anschrift: </strong>Stiftsplatz 3 - 50171 Kerpen</p>
+            <p><strong>Telefon: </strong>02237 / 12345</p>
+            <p><strong>eMail: </strong>info(at)Kanzlei-Kerpen.de</p>
+            <p><strong>Öffnungszeiten: </strong><br>Montags bis Freitags von 9 Uhr bis 11 Uhr<br>und nach Vereinbarung
+            </p>
+
+          </div>
+        </section>
+      </div>
+
     </div>
-  </div>
+  </main>
   <div class="content">
     <img src="./assets/img/kirche.jpg" alt="Stiftskirche Kerpen">
+
   </div>
   </div>
   <div class="model"></div>
   </div>
+
 </body>
+<script src="script.js"></script>
 
 </html>
