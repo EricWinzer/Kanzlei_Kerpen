@@ -50,6 +50,10 @@ nav {
     grid-area: navigation;
 }
 
+nav object {
+    width: 100%;
+}
+
 main {
     grid-area: main;
 }

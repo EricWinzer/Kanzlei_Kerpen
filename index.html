@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./assets/styles/standard.css">
+  <link rel="stylesheet" href="./assets/styles/navbar.css">
   <link rel="stylesheet" href="./assets/styles/card.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="./assets/img/effertz.png">
@@ -12,6 +13,10 @@
 </head>
 
 <body>
+  <svg id="navbar" data-client="1">
+    <path fill="var(--color-card)" id="navbar-inline" />
+  </svg>
+
   <nav>
     <object data="./assets/img/aries.svg" type="image/svg+xml">
       <!-- Fallback -->
@@ -25,6 +30,9 @@
       <!-- Fallback -->
       <img src="assets/img/schmidt.png" alt="HR-Beratung Schmidt">
     </object>
+
+
+
   </nav>
   <main class="banner">
     <div class="slider" style="--quantity: 10">
@@ -204,5 +212,6 @@
 
 </body>
 <script src="script.js"></script>
+<script src="./assets/scripts/navbar.js"></script>
 
 </html>
