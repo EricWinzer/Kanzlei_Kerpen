@@ -55,3 +55,7 @@ function schalte() {
         }
     }
 }
+
+function toggleDNone(id) {
+    document.getElementById(id).classList.toggle('d_none')
+};

@@ -11,3 +11,57 @@
     transition: all 150ms;
     cursor: pointer;
 }
+
+aside .menu-banner {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    font-size: 2rem;
+    color: white;
+    opacity: 1;
+    transform: rotate(-90deg);
+    transition: all 250ms;
+}
+
+aside.sidebar-open .menu-banner {
+    opacity: 0;
+}
+
+aside nav {
+    opacity: 0;
+    transition: all 250ms;
+}
+
+aside nav ul li a {
+    transition: all 250ms;
+}
+
+aside nav ul li a:hover {
+    --color-font: var(--color-font-hover);
+}
+
+
+aside.sidebar-open nav {
+    opacity: 1;
+}
+
+
+
+.menu-logo {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 7rem;
+    height: 5rem;
+    z-index: 3;
+
+}
+
+
+.sidebar-open {
+    color: white;
+}
+
+.d_none {
+    display: none;
+}

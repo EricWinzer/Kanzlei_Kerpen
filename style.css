@@ -46,11 +46,11 @@ body {
         "navigation footer";
 }
 
-nav {
+aside {
     grid-area: navigation;
 }
 
-nav object {
+aside object {
     width: 100%;
 }
 

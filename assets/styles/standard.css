@@ -22,6 +22,8 @@
   --color-background: white;
   --color-card: var(--color-font);
   --color-font: rgb(140, 150, 160);
+  --color-font-hover: rgb(20, 90, 160);
+
 
   --btn-primary: hsl(213, 79%, 56%);
   --btn-light: hsl(181, 95%, 92%);
@@ -46,4 +48,11 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--color-font);
 }
