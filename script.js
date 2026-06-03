@@ -19,56 +19,18 @@ function safeToLocalStorage() {
 
 function init() {
     getFromLocalStorage();
-    console.log(data);
-    /* 
-    contentRef.innerHTML = '';
-    contentRef.innerHTML += myHome();
-
- */
+    render();
 }
 
-function renderPlayground() {
-    contentRef.innerHTML = '';
-    contentRef.innerHTML += myPlayground();
-}
-
-function renderBusiness() {
-    contentRef.innerHTML = '';
-    contentRef.innerHTML += myBusiness();
-}
-
-function renderContact() {
-    contentRef.innerHTML = '';
-    contentRef.innerHTML += myContact();
-}
-
-var anis;
-
-window.onload = function () {
-    anis = document.querySelectorAll('.ani');
-    for (var i = 0; i < anis.length; i++) {
-        anis[i].style.MozAnimationPlayState = 'running';
-        anis[i].style.webkitAnimationPlayState = 'running';
-        anis[i].style.AnimationPlayState = 'running';
+function render() {
+    for (let index = 0; index < data.length; index++) {
+        const itemRef = document.getElementById(`item-${index}`);
+        if (itemRef) {
+            itemRef.innerHTML = getSliderItemRAIN(index);
+            for (let i = 0; i < data[index].activities.length; i++) {
+                itemRef.innerHTML += getActivityItemRAIN(index, i);
+            }
+            itemRef.innerHTML += getSliderItemFooterRAIN();
+        }
     }
 };
-
-function schalte() {
-    for (var i = 0; i < anis.length; i++) {
-        if (anis[i].style.webkitAnimationPlayState === 'running') {
-            anis[i].style.webkitAnimationPlayState = 'paused';
-        } else {
-            anis[i].style.webkitAnimationPlayState = 'running';
-        }
-        if (anis[i].style.MozAnimationPlayState === 'running') {
-            anis[i].style.MozAnimationPlayState = 'paused';
-        } else {
-            anis[i].style.MozAnimationPlayState = 'running';
-        }
-        if (anis[i].style.AnimationPlayState === 'running') {
-            anis[i].style.AnimationPlayState = 'paused';
-        } else {
-            anis[i].style.AnimationPlayState = 'running';
-        }
-    }
-}
