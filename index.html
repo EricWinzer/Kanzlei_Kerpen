@@ -1,67 +1,29 @@
 <!doctype html>
 <html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./assets/styles/standard.css" />
+        <link rel="stylesheet" href="./assets/styles/card.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="./assets/img/effertz.png" />
+        <title>Bürogemeinschaft Stiftsplatz Kerpen</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./assets/styles/standard.css">
-  <link rel="stylesheet" href="./assets/styles/navbar.css">
-  <link rel="stylesheet" href="./assets/styles/card.css">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="./assets/img/effertz.png">
-  <title>Bürogemeinschaft Stiftsplatz Kerpen</title>
-</head>
+    <body onload="init()">
+        <main class="banner">
+            <div class="slider" style="--quantity: 3">
+                <div class="item" style="--position: 1" id="item-0"></div>
+                <div class="item" style="--position: 2" id="item-1"></div>
+                <div class="item" style="--position: 3" id="item-2"></div>
+            </div>
+        </main>
+        <div class="content">
+            <img src="./assets/img/kirche.png" alt="Stiftskirche Kerpen" />
+        </div>
+    </body>
+    <script src="./assets/scripts/db.js"></script>
+    <script src="./assets/scripts/template.js"></script>
 
-<body onload="init()">
-  <aside id="navbarWrapper">
-    <svg id="navbar" data-client="1">
-      <path fill="var(--color-card)" id="navbar-inline" />
-    </svg>
-    <object class="menu-logo" data="./assets/img/effertz.svg" type="image/svg+xml">
-      <!-- Fallback -->
-      <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
-    </object>
-
-    <div class="menu-banner">Menü</div>
-
-    <object data="./assets/img/aries.svg" type="image/svg+xml">
-      <!-- Fallback -->
-      <img src="assets/img/aries.png" alt="ARIES Büroservice">
-    </object>
-    <object data="./assets/img/effertz.svg" type="image/svg+xml">
-      <!-- Fallback -->
-      <img src="assets/img/effertz.png" alt="Rechtsanwältin Annika Effertz">
-    </object>
-    <object data="./assets/img/schmidt.svg" type="image/svg+xml">
-      <!-- Fallback -->
-      <img src="assets/img/schmidt.png" alt="HR-Beratung Schmidt">
-    </object>
-
-    <nav>
-      <ul class="navigation d_none">
-        <li><a href="">Home</a> </li>
-        <li><a href="">About</a> </li>
-        <li><a href="">Portfolio</a> </li>
-        <li><a href="">Leistungen</a> </li>
-        <li><a href="">Kontakt</a> </li>
-      </ul>
-    </nav>
-
-  </aside>
-
-  <main class="banner">
-    <div class="slider" style="--quantity: 3">
-      <div class="item" style="--position: 1" id="item-0"></div>
-      <div class="item" style="--position: 2" id="item-1"></div>
-      <div class="item" style="--position: 3" id="item-2"></div>
-    </div>
-  </main>
-
-</body>
-<script src="./assets/scripts/db.js"></script>
-<script src="./assets/scripts/template.js"></script>
-
-<script src="script.js"></script>
-<script src="./assets/scripts/navbar.js"></script>
-
+    <script src="script.js"></script>
 </html>

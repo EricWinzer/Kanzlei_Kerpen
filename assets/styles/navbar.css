@@ -1,3 +1,31 @@
+body {
+    display: grid;
+    text-wrap: balance;
+    place-items: center;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas:
+        'navigation main'
+        'navigation main'
+        'navigation footer';
+}
+
+aside {
+    grid-area: navigation;
+}
+
+aside object {
+    width: 100%;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
 #navbar {
     position: fixed;
     top: 0;
@@ -40,12 +68,9 @@ aside nav ul li a:hover {
     --color-font: var(--color-font-hover);
 }
 
-
 aside.sidebar-open nav {
     opacity: 1;
 }
-
-
 
 .menu-logo {
     position: fixed;
@@ -54,9 +79,7 @@ aside.sidebar-open nav {
     width: 7rem;
     height: 5rem;
     z-index: 3;
-
 }
-
 
 .sidebar-open {
     color: white;

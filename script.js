@@ -26,11 +26,24 @@ function render() {
     for (let index = 0; index < data.length; index++) {
         const itemRef = document.getElementById(`item-${index}`);
         if (itemRef) {
-            itemRef.innerHTML = getSliderItemRAIN(index);
+            itemRef.innerHTML = getSliderItem(index);
             for (let i = 0; i < data[index].activities.length; i++) {
-                itemRef.innerHTML += getActivityItemRAIN(index, i);
+                itemRef.innerHTML += getActivityItem(index, i);
             }
-            itemRef.innerHTML += getSliderItemFooterRAIN();
+            itemRef.innerHTML += getSliderItemFooter();
         }
+
+        let html = getSliderItem(index);
+
+        for (let i = 0; i < data[index].activities.length; i++) {
+            html += getActivityItem(index, i);
+        }
+
+        html += getSliderItemFooter();
+
+        console.log(html);
+
+        itemRef.innerHTML = html;
+        console.log(itemRef.outerHTML);
     }
-};
+}
