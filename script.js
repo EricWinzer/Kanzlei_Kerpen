@@ -6,23 +6,30 @@ function toggleDNone(id) {
 }
 
 // Local Storage
-function getFromLocalStorage() {
-    let myArray = JSON.parse(localStorage.getItem('data'));
-    if (myArray != null) {
-        data = myArray;
-    }
-}
-
 function safeToLocalStorage() {
     localStorage.setItem('data', JSON.stringify(data));
 }
 
+function getFromLocalStorage() {
+    let myArray = JSON.parse(localStorage.getItem('data'));
+    if (myArray != null) {
+        data = myArray;
+        safeToLocalStorage();
+    }
+}
 function init() {
     getFromLocalStorage();
     render();
 }
 
 function render() {
+    renderSlider();
+    /*     renderCards();
+     */
+}
+
+
+function renderSlider() {
     for (let index = 0; index < data.length; index++) {
         const itemRef = document.getElementById(`item-${index}`);
         if (itemRef) {
@@ -41,9 +48,15 @@ function render() {
 
         html += getSliderItemFooter();
 
-        console.log(html);
-
         itemRef.innerHTML = html;
-        console.log(itemRef.outerHTML);
+    }
+}
+
+function renderCards() {
+    for (let index = 0; index < data[index].activities.area.length; index++) {
+        const itemRef = document.getElementById(`card-${index}`);
+        if (itemRef) {
+            itemRef.innerHTML = getCardItem(index);
+        }
     }
 }

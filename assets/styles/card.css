@@ -10,9 +10,11 @@
     --color-card: var(--color-aries-logo);
 }
 
-.card-wrapper {
+/* Card-definition for Slider */
+.slider-wrapper {
     width: 20rem;
     padding: 1rem;
+    background: white;
     color: var(--color-card);
     border-radius: var(--br);
     overflow: hidden;
@@ -34,4 +36,67 @@ h2 span {
 .card-body p,
 .card-body a {
     padding: 0.5rem;
+}
+
+/* Card-definition for individual cards */
+.container {
+    --column-count: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    grid-column-gap: var(--spacer-md);
+    place-content: center;
+}
+
+.card-wrapper {
+    --column-count: 1;
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    grid-column-gap: var(--spacer-md);
+}
+
+.card__grid[data-columns="2"] {
+    --column-count: 2;
+}
+
+.card__grid[data-columns="3"] {
+    --column-count: 3;
+}
+
+.card__grid[data-columns="4"] {
+    --column-count: 4;
+}
+
+.card {
+    border-radius: var(--br);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.card-title {
+    background: var(--color-card);
+    color: rgba(255, 255, 255, .7);
+    margin: 0;
+    padding: var(--spacer) 0;
+    font-weight: var(--fw-m);
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.card-description {
+    color: var(--color-card);
+    padding: 1em var(--spacer-lg);
+    margin: 0;
+    font-size: 2em;
+    font-weight: var(--fw-b);
+}
+
+.card-description span {
+    font-size: .5em;
+    font-weight: var(--fw-n);
+}
+
+.card-bodyparts {
+    padding: 0 var(--spacer-lg) 2em;
 }

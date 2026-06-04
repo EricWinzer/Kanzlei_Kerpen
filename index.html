@@ -1,29 +1,40 @@
 <!doctype html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/styles/standard.css" />
-        <link rel="stylesheet" href="./assets/styles/card.css" />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/x-icon" href="./assets/img/effertz.png" />
-        <title>Bürogemeinschaft Stiftsplatz Kerpen</title>
-    </head>
 
-    <body onload="init()">
-        <main class="banner">
-            <div class="slider" style="--quantity: 3">
-                <div class="item" style="--position: 1" id="item-0"></div>
-                <div class="item" style="--position: 2" id="item-1"></div>
-                <div class="item" style="--position: 3" id="item-2"></div>
-            </div>
-        </main>
-        <div class="content">
-            <img src="./assets/img/kirche.png" alt="Stiftskirche Kerpen" />
-        </div>
-    </body>
-    <script src="./assets/scripts/db.js"></script>
-    <script src="./assets/scripts/template.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles/standard.css" />
+  <link rel="stylesheet" href="./assets/styles/card.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./assets/img/effertz.png" />
+  <title>Bürogemeinschaft Stiftsplatz Kerpen</title>
+</head>
 
-    <script src="script.js"></script>
+<body onload="init()">
+  <main class="banner">
+    <div class="slider" style="--quantity: 3">
+      <div class="item" style="--position: 1" id="item-0"></div>
+      <div class="item" style="--position: 2" id="item-1"></div>
+      <div class="item" style="--position: 3" id="item-2"></div>
+    </div>
+  </main>
+  <div class="content">
+    <img src="./assets/img/kirche.png" alt="Stiftskirche Kerpen" />
+  </div>
+  <section id="card-0" data-client="1" class="container" data-columns="3"></section>
+
+  </section>
+  <section id="card-1" data-client="2" class="container" data-columns="3"></section>
+
+  </section>
+  <section id="card-2" data-client="3" class="container" data-columns="3"></section>
+
+  </section>
+</body>
+<script src="./assets/scripts/db.js"></script>
+<script src="./assets/scripts/template.js"></script>
+
+<script src="script.js"></script>
+
 </html>

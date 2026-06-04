@@ -2,7 +2,8 @@ let data = [
     {
         imgSVG: './assets/img/effertz.svg',
         imgPNG: './assets/img/effertz.png',
-        objectAlt: 'Rechtsanwältin Annika Effertz',
+        objectAltFirst: 'Rechtsanwältin',
+        objectAltSecond: 'Annika Effertz',
         activities: [
             {
                 area: 'Arbeitsrecht',
@@ -71,7 +72,8 @@ let data = [
     {
         imgSVG: './assets/img/schmidt.svg',
         imgPNG: './assets/img/schmidt.png',
-        objectAlt: 'HR-Beratung Schmidt',
+        objectAltFirst: 'HR-Beratung Schmidt',
+        objectAltSecond: 'Inh. Undine Schmidt',
         activities: [
             {
                 area: 'Coaching',
@@ -90,7 +92,8 @@ let data = [
     {
         imgSVG: './assets/img/aries.svg',
         imgPNG: './assets/img/aries.png',
-        objectAlt: 'ARIES Büroservice',
+        objectAltFirst: 'ARIES Büroservice UG',
+        objectAltSecond: '(haftungsbeschränkt)',
         activities: [
             {
                 area: 'Consulting',
