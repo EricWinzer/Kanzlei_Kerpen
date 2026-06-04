@@ -24,8 +24,7 @@ function init() {
 
 function render() {
     renderSlider();
-    /*     renderCards();
-     */
+    renderCards();
 }
 
 
@@ -53,10 +52,14 @@ function renderSlider() {
 }
 
 function renderCards() {
-    for (let index = 0; index < data[index].activities.area.length; index++) {
+    for (let index = 0; index < data[index].activities[index].area[index].description.length; index++) {
         const itemRef = document.getElementById(`card-${index}`);
         if (itemRef) {
             itemRef.innerHTML = getCardItem(index);
+            for (let i = 0; i < data[index].activities[index].area[index].description.length; i++) {
+                itemRef.innerHTML += getCardBodyparts(index, i);
+            }
+            itemRef.innerHTML += getCardFooter(index);
         }
     }
 }

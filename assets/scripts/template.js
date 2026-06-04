@@ -21,11 +21,17 @@ function getCardItem(index) {
     return `<div class="card-wrapper" data-columns="1"> /
         <div class="card" data-client="3"> /
             <h3 class="card-title">${data[index].objectAltFirst}<br>${data[index].objectAltSecond}</h3>/
-                <p class="card-description">Tätigkeitsfelder <span> nach Schwerpunkt</span></p>/
-                    <div class="card-bodyparts">/
-                        <p><strong>${data[clientIndex].activities[activityIndex].area}</strong> ${data[clientIndex].activities[activityIndex].description}</p> /
+                <p class="card-description">${data[index].activities[0].area}</p>/`;
+}
 
+function getCardBodyparts(index, descriptionIndex) {
+    return `<div class="card-bodyparts">/
+                        <p>${data[index].activities[index].description[descriptionIndex].text}</p> /
                     </div >/
             </div > `;
 }
 
+function getCardFooter(index) {
+    return `</div >/
+            </div > `;
+}
