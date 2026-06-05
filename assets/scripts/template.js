@@ -17,21 +17,35 @@ function getSliderItemFooter() {
             </section>`;
 }
 
-function getCardItem(index) {
-    return `<div class="card-wrapper" data-columns="1"> /
-        <div class="card" data-client="3"> /
-            <h3 class="card-title">${data[index].objectAltFirst}<br>${data[index].objectAltSecond}</h3>/
-                <p class="card-description">${data[index].activities[0].area}</p>/`;
+function getCardItem(clientIndex, activityIndex) {
+    return `
+        <div class="card-wrapper" data-columns="1">
+            <div class="card" data-client="${clientIndex + 1}">
+                <h3 class="card-title">
+                    ${data[clientIndex].activities[activityIndex].area}
+                </h3>
+                <p class="card-description">
+                    ${data[clientIndex].activities[activityIndex].descriptionShort}
+                </p>
+    `;
 }
 
-function getCardBodyparts(index, descriptionIndex) {
-    return `<div class="card-bodyparts">/
-                        <p>${data[index].activities[index].description[descriptionIndex].text}</p> /
-                    </div >/
-            </div > `;
+function getCardBodyparts(clientIndex, activityIndex, descIndex) {
+    return `
+        <div class="card-bodyparts">
+            <p>
+                ${data[clientIndex]
+            .activities[activityIndex]
+            .description[descIndex]
+            .text}
+            </p>
+        </div>
+    `;
 }
 
-function getCardFooter(index) {
-    return `</div >/
-            </div > `;
+function getCardFooter() {
+    return `
+            </div>
+        </div>
+    `;
 }

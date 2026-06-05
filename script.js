@@ -50,16 +50,33 @@ function renderSlider() {
         itemRef.innerHTML = html;
     }
 }
-
 function renderCards() {
-    for (let index = 0; index < data[index].activities[index].area[index].description.length; index++) {
-        const itemRef = document.getElementById(`card-${index}`);
-        if (itemRef) {
-            itemRef.innerHTML = getCardItem(index);
-            for (let i = 0; i < data[index].activities[index].area[index].description.length; i++) {
-                itemRef.innerHTML += getCardBodyparts(index, i);
+    for (let index = 0; index < data.length; index++) {
+
+        const cardRef = document.getElementById(`card-${index}`);
+
+        if (!cardRef) continue;
+
+        let html = '';
+
+        for (let activityIndex = 0; activityIndex < data[index].activities.length; activityIndex++) {
+
+            html += getCardItem(index, activityIndex);
+
+            const descriptions =
+                data[index].activities[activityIndex].description || [];
+
+            for (let descIndex = 0; descIndex < descriptions.length; descIndex++) {
+                html += getCardBodyparts(
+                    index,
+                    activityIndex,
+                    descIndex
+                );
             }
-            itemRef.innerHTML += getCardFooter(index);
+
+            html += getCardFooter();
         }
+
+        cardRef.innerHTML = html;
     }
 }
