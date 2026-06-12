@@ -1,33 +1,6 @@
-:root {
-    --color-rain: #1d5e86;
-    --color-rain-logo: #728da2;
-    --color-schmidt: #005228;
-    --color-schmidt-logo: #98aa93;
-    --color-aries: #7a161e;
-    --color-aries-logo: #c3958d;
-
-    --color-background: white;
-    --color-font: rgb(140, 150, 160);
-    --color-card: var(--color-font);
-
-    --shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
-    --br: 1rem;
-}
-
 @font-face {
     font-family: 'Sukhumvit Set';
     src: url(./assets/fonts/sukhumvit/69fc4f0f2a8869feeec71379c2cf824c.woff2) format('woff2');
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
 }
 
 .d_none {
@@ -36,8 +9,10 @@
 
 body {
     display: grid;
+    background-color: var(--color-background);
     text-wrap: balance;
     place-items: center;
+    font-family: var(--font-family);
 }
 
 .banner {
@@ -138,4 +113,5 @@ img {
     left: 25%;
     height: 100vh;
     object-fit: cover;
+    z-index: 3;
 }

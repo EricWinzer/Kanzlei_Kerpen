@@ -1,13 +1,13 @@
 *[data-client='1'] {
-    --color-card: var(--color-rain-logo);
+    --color-card: var(--color-rain-light);
 }
 
 *[data-client='2'] {
-    --color-card: var(--color-schmidt-logo);
+    --color-card: var(--color-schmidt-light);
 }
 
 *[data-client='3'] {
-    --color-card: var(--color-aries-logo);
+    --color-card: var(--color-aries-light);
 }
 
 .card-wrapper {
@@ -17,6 +17,10 @@
     border-radius: var(--br);
     overflow: hidden;
     box-shadow: var(--shadow);
+}
+
+object {
+    background-color: unset;
 }
 
 h2 span {
@@ -33,5 +37,6 @@ h2 span {
 
 .card-body p,
 .card-body a {
+    background-color: var(--color-card-background);
     padding: 0.5rem;
 }

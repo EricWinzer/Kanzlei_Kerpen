@@ -78,12 +78,12 @@ let data = [
                 descriptionShort: 'Team- und Einzelcoaching',
             },
             {
-                area: 'Wissenstransfer',
-                descriptionShort: 'Begleitung von Nachfolgeprozessen',
-            },
-            {
                 area: 'HR-Prozesse und Change Management',
                 descriptionShort: 'Entwicklung, Aufbau und Optimierung maßgeschneiderter HR-Prozesse',
+            },
+            {
+                area: 'Wissenstransfer',
+                descriptionShort: 'Begleitung von Nachfolgeprozessen',
             },
         ],
     },
