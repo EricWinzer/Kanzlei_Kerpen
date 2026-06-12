@@ -1,5 +1,5 @@
 function getSliderItem(index) {
-    return `<section class="card-wrapper" data-client="${index + 1}" onclick="schalte()">
+    return `<section class="card-wrapper" data-client="${index + 1}" onclick="schalte(${index + 1})">
             <object data="${data[index].imgSVG}" type="image/svg+xml">
               <!-- Fallback -->
               <img src="${data[index].imgPNG}" alt="${data[index].objectAlt}">
@@ -9,7 +9,7 @@ function getSliderItem(index) {
 }
 
 /* function getSliderItem(index) {
-    return `<section class="card-wrapper" data-client="${index + 1}" onclick="schalte()">
+    return `<section class="card-wrapper" data-client="${index + 1}" onclick="schalte(${index + 1})">
             <object data="${data[index].imgSVG}" type="image/svg+xml">
               <!-- Fallback -->
               <img src="${data[index].imgPNG}" alt="${data[index].objectAlt}">
@@ -20,7 +20,7 @@ function getSliderItem(index) {
  */
 
 function getActivityItem(clientIndex, activityIndex) {
-    return `<p><strong>${data[clientIndex].activities[activityIndex].area}</strong> ${data[clientIndex].activities[activityIndex].descriptionShort}</p>`;
+    return `<p onclick="event.stopPropagation(); openOverlay(${clientIndex}, ${activityIndex})" style="cursor:pointer"><strong>${data[clientIndex].activities[activityIndex].area}</strong> ${data[clientIndex].activities[activityIndex].descriptionShort}</p>`;
 }
 
 function getSliderItemFooter() {

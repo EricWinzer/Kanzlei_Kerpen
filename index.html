@@ -19,9 +19,18 @@
             </div>
             <div class="content">
                 <img src="./assets/img/kirche.png" alt="Stiftskirche Kerpen" />
+                <img class="kirche-front" src="./assets/img/kirche.png" alt="" aria-hidden="true" />
             </div>
         </main>
     </body>
+    <div id="card-overlay" class="card-overlay d_none" onclick="closeOverlay()">
+        <div class="card-overlay-content" onclick="event.stopPropagation()">
+            <h3 id="overlay-area"></h3>
+            <ul id="overlay-description"></ul>
+            <button onclick="closeOverlay()">×</button>
+        </div>
+    </div>
+
     <script src="./assets/scripts/db.js"></script>
     <script src="./assets/scripts/template.js"></script>
 

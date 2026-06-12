@@ -1,6 +1,55 @@
 // Globales
 const contentRef = document.getElementById('content');
 
+function openOverlay(clientIndex, activityIndex) {
+    const activity = data[clientIndex].activities[activityIndex];
+    document.getElementById('overlay-area').textContent = activity.area;
+    const items = activity.description
+        ? activity.description.map(d => `<li>${d.text}</li>`).join('')
+        : `<li>${activity.descriptionShort}</li>`;
+    document.getElementById('overlay-description').innerHTML = items;
+    document.getElementById('card-overlay').classList.remove('d_none');
+}
+
+function closeOverlay() {
+    document.getElementById('card-overlay').classList.add('d_none');
+}
+
+function schalte(clickedPosition) {
+    const slider = document.querySelector('.slider');
+    const anim = slider.getAnimations()[0];
+    if (!anim) return;
+
+    const DURATION = 20000;
+    const QUANTITY = parseInt(getComputedStyle(slider).getPropertyValue('--quantity')) || 3;
+
+    const currentTime = ((anim.currentTime % DURATION) + DURATION) % DURATION;
+    const currentDeg = (currentTime / DURATION) * 360;
+    const targetDeg = ((clickedPosition - 1) / QUANTITY) * 360;
+    const delta = (targetDeg - currentDeg + 360) % 360;
+
+    if (delta < 2) {
+        anim.pause();
+        return;
+    }
+
+    const targetTime = (currentTime + (delta / 360) * DURATION) % DURATION;
+    anim.pause();
+
+    let startReal = null;
+    function animate(now) {
+        if (!startReal) startReal = now;
+        const animElapsed = (now - startReal) * 4;
+        if (animElapsed >= (delta / 360) * DURATION) {
+            anim.currentTime = targetTime;
+        } else {
+            anim.currentTime = (currentTime + animElapsed) % DURATION;
+            requestAnimationFrame(animate);
+        }
+    }
+    requestAnimationFrame(animate);
+}
+
 function toggleDNone(id) {
     document.getElementById(id).classList.toggle('d_none');
 }
